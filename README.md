@@ -1,5 +1,7 @@
 # README
 
+this is a branch for shellRaining, and askOri is for the newest version of the repository, lts is for myself.
+
 ![](https://img.shields.io/badge/neovim-0.8-green?style=plastic&logo=Neovim) ![](https://img.shields.io/badge/Lua-Jit-green?style=plastic&logo=Lua)
 
 ## Introduction
