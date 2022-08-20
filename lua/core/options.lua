@@ -2,7 +2,7 @@ local api = require("utils.api")
 
 local options = {}
 
-options.transparent = false
+options.transparent = true
 options.float_border = true
 
 -- The use of winbar is temporarily deprecated,
