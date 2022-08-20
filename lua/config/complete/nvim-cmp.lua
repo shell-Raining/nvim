@@ -52,7 +52,7 @@ function M.load()
         preselect = M.cmp_types.cmp.PreselectMode.None,
         -- Insert or Replace
         confirmation = {
-            default_behavior = M.cmp.ConfirmBehavior.Insert,
+            default_behavior = M.cmp.ConfirmBehavior.Replace,
         },
         snippet = {
             expand = function(args)
