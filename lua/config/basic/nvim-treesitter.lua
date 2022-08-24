@@ -37,7 +37,7 @@ function M.load()
         },
         -- incremental selection
         incremental_selection = {
-            enable = false,
+            enable = true,
             keymaps = {
                 init_selection = "<cr>",
                 node_incremental = "<cr>",
