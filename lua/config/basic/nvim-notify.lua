@@ -19,6 +19,8 @@ function M.before()
         "could not find file",
         "Debug adapter disconnected",
         "No stopped threads. Cannot move",
+        -- TODO-command
+        "Invalid buffer id: %d*",
     }
 
     M.ignore_message = {
@@ -83,9 +85,7 @@ function M.register_key()
         {
             mode = { "n" },
             lhs = "<leader>fn",
-            rhs = function()
-                require("telescope").extensions.notify.notify()
-            end,
+            rhs = ":Notifications<cr>",
             options = { silent = true },
             description = "Find notices history",
         },
