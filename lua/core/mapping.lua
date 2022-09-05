@@ -32,7 +32,7 @@ api.map.bulk_register({
         description = "Clear search highlight",
     },
     {
-        mode = { "n" },
+        mode = { "n", "x" },
         lhs = "<c-u>",
         rhs = function()
             vim.cmd("normal! " .. math.ceil(vim.api.nvim_win_get_height(0) / 4) .. "k")
@@ -41,7 +41,7 @@ api.map.bulk_register({
         description = "Move 1/4 screen up",
     },
     {
-        mode = { "n" },
+        mode = { "n", "x" },
         lhs = "<c-d>",
         rhs = function()
             vim.cmd("normal! " .. math.ceil(vim.api.nvim_win_get_height(0) / 4) .. "j")
