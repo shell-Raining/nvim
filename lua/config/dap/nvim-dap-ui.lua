@@ -21,16 +21,16 @@ function M.load()
                 elements = {
                     -- elements can be strings or table with id and size keys.
                     "scopes",
-                    "breakpoints",
-                    "stacks",
-                    "watches",
+                    -- "breakpoints",
+                    -- "stacks",
+                    -- "watches",
                 },
-                size = 30,
+                size = 70,
                 position = "right",
             },
             {
                 elements = {
-                    "repl",
+                    -- "repl",
                     "console",
                 },
                 size = 10,
