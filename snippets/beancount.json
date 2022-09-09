@@ -1,0 +1,22 @@
+{
+  "add food expenses": {
+    "prefix": "food",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"${1:Beneficiary}\" \"${2:Cmt}\" #${3:Tag}",
+      "\tAssets:${4:SchoolCard}\t${5:cost}CNY",
+      "\tExpenses:Food\t${6:earn}CNY",
+      "$0"
+    ],
+    "description": "print the food expenses"
+  },
+  "add clothing expenses": {
+    "prefix": "clothing",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"${1:Beneficiary}\" \"${2:Cmt}\"",
+      "\tAssets:${3:BOC}\t${4:cost}CNY",
+      "\tExpenses:Clothing\t${5:earn}CNY",
+      "$0"
+    ],
+    "description": "print the food expenses"
+  }
+}
