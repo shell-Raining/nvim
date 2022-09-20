@@ -36,7 +36,7 @@ plugins.complete = {
     { "hrsh7th/cmp-path", after = { "nvim-cmp" } },
     { "hrsh7th/cmp-cmdline", after = { "nvim-cmp" } },
     { "kristijanhusak/vim-dadbod-completion", after = { "nvim-cmp" } },
-    { "tzachar/cmp-tabnine", run = "./install.sh", after = { "nvim-cmp" } },
+    -- { "tzachar/cmp-tabnine", run = "./install.sh", after = { "nvim-cmp" } },
     -- FIX: https://github.com/mfussenegger/nvim-dap/issues/562
     { "github/copilot.vim", ft = { "dap-repl" }, event = { "InsertEnter" }, disable = true },
 }

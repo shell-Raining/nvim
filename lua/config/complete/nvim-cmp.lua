@@ -61,13 +61,13 @@ function M.load()
         },
         -- define completion source
         sources = M.cmp.config.sources({
-            { name = "vsnip" },
             { name = "nvim_lsp" },
+            { name = "vsnip" },
             { name = "path" },
             { name = "buffer" },
-            { name = "cmdline" },
-            { name = "cmp_tabnine" },
-            { name = "vim-dadbod-completion" },
+            -- { name = "cmp_tabnine" },
+            -- { name = "cmdline" },
+            -- { name = "vim-dadbod-completion" },
         }),
         -- define buttons
         -- • i: valid in insert mode
