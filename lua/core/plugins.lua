@@ -35,10 +35,10 @@ plugins.complete = {
     { "hrsh7th/cmp-buffer", after = { "nvim-cmp" } },
     { "hrsh7th/cmp-path", after = { "nvim-cmp" } },
     { "hrsh7th/cmp-cmdline", after = { "nvim-cmp" } },
-    { "kristijanhusak/vim-dadbod-completion", after = { "nvim-cmp" } },
+    -- { "kristijanhusak/vim-dadbod-completion", after = { "nvim-cmp" } },
     -- { "tzachar/cmp-tabnine", run = "./install.sh", after = { "nvim-cmp" } },
     -- FIX: https://github.com/mfussenegger/nvim-dap/issues/562
-    { "github/copilot.vim", ft = { "dap-repl" }, event = { "InsertEnter" }, disable = true },
+    -- { "github/copilot.vim", ft = { "dap-repl" }, event = { "InsertEnter" }, disable = true },
 }
 
 plugins.dap = {
@@ -49,7 +49,7 @@ plugins.dap = {
 
 plugins.editor = {
     { "AndrewRadev/switch.vim" },
-    { "jbyuki/venn.nvim", module = "venn" },
+    -- { "jbyuki/venn.nvim", module = "venn" },
     { "windwp/nvim-autopairs", event = { "InsertEnter" } },
     { "ur4ltz/surround.nvim", event = { "BufRead", "BufNewFile" } },
     { "RRethy/vim-illuminate", event = { "BufRead", "BufNewFile" } },
@@ -63,11 +63,11 @@ plugins.editor = {
         module = { "Comment" },
         after = { "nvim-ts-context-commentstring" },
     },
-    {
-        "mg979/vim-visual-multi",
-        fn = { "vm#commands#add_cursor_up", "vm#commands#add_cursor_down" },
-        keys = { "<c-n>" },
-    },
+    -- {
+    --     "mg979/vim-visual-multi",
+    --     fn = { "vm#commands#add_cursor_up", "vm#commands#add_cursor_down" },
+    --     keys = { "<c-n>" },
+    -- },
 }
 
 plugins.lanaguage = {
@@ -90,10 +90,10 @@ plugins.tools = {
     { "uga-rosa/translate.nvim" },
     { "olimorris/persisted.nvim" },
     { "norcalli/nvim-colorizer.lua" },
-    { "askfiy/nvim-picgo", module = "nvim-picgo" },
-    { "kristijanhusak/vim-carbon-now-sh", cmd = { "CarbonNowSh" } },
+    -- { "askfiy/nvim-picgo", module = "nvim-picgo" },
+    -- { "kristijanhusak/vim-carbon-now-sh", cmd = { "CarbonNowSh" } },
     { "lewis6991/gitsigns.nvim", event = { "BufRead", "BufNewFile" } },
-    { "dstein64/vim-startuptime", cmd = { "StartupTime" } },
+    -- { "dstein64/vim-startuptime", cmd = { "StartupTime" } },
     { "folke/which-key.nvim", event = { "BufRead", "BufNewFile" } },
 }
 
@@ -103,9 +103,9 @@ plugins.views = {
     { "mbbill/undotree", event = { "BufRead", "BufNewFile" } },
     { "kyazdani42/nvim-tree.lua", cmd = { "NvimTreeToggle", "NvimTreeFindFile" } },
     { "akinsho/bufferline.nvim", events = { "BufNewFile", "BufRead", "TabEnter" } },
-    { "tpope/vim-dadbod", fn = { "db#resolve" } },
-    { "kristijanhusak/vim-dadbod-ui", cmd = { "DBUIToggle" } },
-    { "dstein64/nvim-scrollview", event = { "BufRead", "BufNewFile" } },
+    -- { "tpope/vim-dadbod", fn = { "db#resolve" } },
+    -- { "kristijanhusak/vim-dadbod-ui", cmd = { "DBUIToggle" } },
+    -- { "dstein64/nvim-scrollview", event = { "BufRead", "BufNewFile" } },
     { "akinsho/toggleterm.nvim", module = "toggleterm" },
 }
 
