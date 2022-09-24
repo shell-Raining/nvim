@@ -41,3 +41,6 @@ luac.out
 
 plugin
 .DS_Store
+
+node_modules/prettier
+node_modules
