@@ -18,12 +18,11 @@ function M.load()
 
     M.null_ls.setup({
         sources = {
+            M.null_ls.builtins.formatting.clang_format,
             M.null_ls.builtins.formatting.gofmt,
             M.null_ls.builtins.formatting.shfmt,
             M.null_ls.builtins.formatting.prettier,
             M.null_ls.builtins.formatting.autopep8,
-            M.null_ls.builtins.formatting.sql_formatter,
-            M.null_ls.builtins.formatting.clang_format,
             M.null_ls.builtins.formatting.stylua.with({
                 extra_args = {
                     "--indent-type=Spaces",

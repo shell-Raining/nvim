@@ -12,7 +12,8 @@ local M = {
 
 M.installer_resources = {
     lsp = {
-        "gopls",
+        -- "gopls",
+        "clangd",
         "pyright",
         "css-lsp",
         "json-lsp",
@@ -26,7 +27,7 @@ M.installer_resources = {
         "tailwindcss-language-server",
     },
     dap = {
-        "delve",
+        -- "delve",
         "debugpy",
     },
     linter = {
@@ -35,8 +36,9 @@ M.installer_resources = {
     formatter = {
         "shfmt",
         "autopep8",
+        -- "clang-format",
         "prettier",
-        "sql-formatter",
+        -- "sql-formatter",
         "stylua",
     },
 }
