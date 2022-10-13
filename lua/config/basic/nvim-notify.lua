@@ -34,6 +34,7 @@ function M.before()
         "LSP%[%d*%] client has shut down after sending a workspace/configuration request",
         "method textDocument/signatureHelp is not supported by any of the servers registered for the current buffer",
         "method textDocument/documentSymbol is not supported by any of the servers registered for the current buffer",
+        "warning: multiple different client offset_encodings detected for buffer, this is not supported yet",
     }
 end
 
