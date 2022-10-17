@@ -65,7 +65,7 @@ function M.load()
             { name = "vsnip" },
             { name = "path" },
             { name = "buffer" },
-            -- { name = "cmp_tabnine" },
+            { name = "cmp_tabnine" },
             -- { name = "cmdline" },
             -- { name = "vim-dadbod-completion" },
         }),

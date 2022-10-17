@@ -1,0 +1,15 @@
+{
+  "doxygen cmt": {
+    "prefix": "cmt",
+    "body": [
+      "/**",
+      "* @brief ${1}",
+      "*",
+      "* @param ${2}",
+      "* @return ${3}",
+      "**/",
+      "${0}"
+    ],
+    "description": "for doxygen"
+  }
+}
