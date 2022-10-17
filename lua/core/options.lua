@@ -14,13 +14,18 @@ options.snippets_directory = api.path.join(vim.fn.stdpath("config"), "snippets")
 
 -- auto command manager
 options.auto_save = true
+options.auto_reload = false
 options.auto_switch_input = true
 options.auto_restore_cursor_position = true
 options.auto_remove_new_lines_comment = true
 
 options.database_connect = {
     {
-        name = "pg",
+        name = "HAINING-AGV",
+        url = "postgres://postgres:123456@localhost:5430/HAINING-AGV",
+    },
+    {
+        name = "JG037",
         url = "postgres://postgres:123456@localhost:5430/jg037",
     },
     {

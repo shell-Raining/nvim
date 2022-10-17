@@ -21,11 +21,13 @@ function M.before()
         "No stopped threads. Cannot move",
         -- TODO-command
         "Invalid buffer id: %d*",
+        -- LSP
+        "method textDocument/codeAction is not supported by any of the servers registered for the current buffer",
+        "method textDocument/signatureHelp is not supported by any of the servers registered for the current buffer",
+        "method textDocument/documentSymbol is not supported by any of the servers registered for the current buffer",
     }
 
     M.ignore_message = {
-        -- navic
-        'nvim%-navic: Server ".*" does not support documentSymbols.',
         -- LSP
         "%[LSP%]%[.+%] timeout",
         "LSP%[id=%d*%] client has shut down after sending Log",

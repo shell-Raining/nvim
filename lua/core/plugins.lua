@@ -5,7 +5,7 @@ local plugins = {}
 plugins.basic = {
     { "wbthomason/packer.nvim" },
     { "rcarriga/nvim-notify" },
-    { "tpope/vim-repeat", fn = "repate#set" },
+    { "tpope/vim-repeat" },
     { "nvim-lua/plenary.nvim", module = "plenary" },
     { "williamboman/mason.nvim", after = { "nvim-notify" } },
     { "nvim-treesitter/nvim-treesitter", module = "nvim-treesitter", run = { ":TSUpdate" } },
@@ -17,7 +17,7 @@ plugins.theme = {
 }
 
 plugins.lsp = {
-    { "williamboman/mason-lspconfig.nvim", after = { "mason.nvim" } },
+    { "williamboman/mason-lspconfig.nvim" },
     { "SmiteshP/nvim-navic", after = { "mason-lspconfig.nvim" } },
     { "stevearc/aerial.nvim", after = { "nvim-navic" } },
     { "neovim/nvim-lspconfig", after = { "aerial.nvim" } },
@@ -37,8 +37,6 @@ plugins.complete = {
     { "hrsh7th/cmp-cmdline", after = { "nvim-cmp" } },
     -- { "kristijanhusak/vim-dadbod-completion", after = { "nvim-cmp" } },
     { "tzachar/cmp-tabnine", run = "./install.sh", after = { "nvim-cmp" } },
-    -- FIX: https://github.com/mfussenegger/nvim-dap/issues/562
-    -- { "github/copilot.vim", ft = { "dap-repl" }, event = { "InsertEnter" }, disable = true },
 }
 
 plugins.dap = {
@@ -46,15 +44,14 @@ plugins.dap = {
     { "theHamsta/nvim-dap-virtual-text", after = { "nvim-dap" } },
     { "rcarriga/nvim-dap-ui", after = { "nvim-dap" } },
 }
-
 plugins.editor = {
     { "AndrewRadev/switch.vim" },
     -- { "jbyuki/venn.nvim", module = "venn" },
     { "windwp/nvim-autopairs", event = { "InsertEnter" } },
     { "ur4ltz/surround.nvim", event = { "BufRead", "BufNewFile" } },
     { "RRethy/vim-illuminate", event = { "BufRead", "BufNewFile" } },
+    { "p00f/nvim-ts-rainbow" },
     { "lukas-reineke/indent-blankline.nvim", after = { "nvim-treesitter" } },
-    { "p00f/nvim-ts-rainbow", after = { "nvim-treesitter" } },
     { "windwp/nvim-ts-autotag", after = { "nvim-treesitter" } },
     { "JoosepAlviste/nvim-ts-context-commentstring", after = { "nvim-treesitter" } },
     {
@@ -72,8 +69,9 @@ plugins.editor = {
 
 plugins.lanaguage = {
     { "folke/lua-dev.nvim" },
-    { "davidgranstrom/nvim-markdown-preview", ft = { "markdown" }, cmd = { "MarkdownPreview" } },
-    { "Vimjas/vim-python-pep8-indent", ft = "py", event = { "InsertEnter" } },
+    { "davidgranstrom/nvim-markdown-preview", ft = { "markdown" } },
+    { "Vimjas/vim-python-pep8-indent", ft = { "python" }, event = { "InsertEnter" } },
+    { "AckslD/swenv.nvim" },
 }
 
 plugins.find = {
