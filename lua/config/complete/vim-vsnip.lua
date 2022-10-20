@@ -28,7 +28,7 @@ function M.register_key()
             mode = { "i", "s" },
             lhs = "<tab>",
             rhs = function()
-                return vim.fn["vsnip#jumpable"](1) and "<Plug>(vsnip-jump-next)" or "<tab>"
+                return vim.api.nvim_eval("vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<tab>'")
             end,
             options = { silent = true, expr = true },
             description = "Jump to the next fragment placeholder",
@@ -37,7 +37,7 @@ function M.register_key()
             mode = { "i", "s" },
             lhs = "<s-tab>",
             rhs = function()
-                return vim.fn["vsnip#jumpable"](-1) and "<Plug>(vsnip-jump-prev)" or "<s-tab>"
+                return vim.api.nvim_eval("vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<s-tab>'")
             end,
             options = { silent = true, expr = true },
             description = "Jump to the prev fragment placeholder",
