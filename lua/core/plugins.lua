@@ -68,7 +68,7 @@ plugins.editor = {
 }
 
 plugins.lanaguage = {
-    { "folke/lua-dev.nvim" },
+    -- { "folke/lua-dev.nvim" },
     { "davidgranstrom/nvim-markdown-preview", ft = { "markdown" } },
     { "Vimjas/vim-python-pep8-indent", ft = { "python" }, event = { "InsertEnter" } },
     { "AckslD/swenv.nvim" },
