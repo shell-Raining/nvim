@@ -17,10 +17,9 @@ plugins.theme = {
 }
 
 plugins.lsp = {
-    { "williamboman/mason-lspconfig.nvim" },
+    { "williamboman/mason-lspconfig.nvim", after = { "mason.nvim" } },
     { "SmiteshP/nvim-navic", after = { "mason-lspconfig.nvim" } },
-    { "stevearc/aerial.nvim", after = { "nvim-navic" } },
-    { "neovim/nvim-lspconfig", after = { "aerial.nvim" } },
+    { "neovim/nvim-lspconfig", after = { "nvim-navic", "neodev.nvim" } },
     { "j-hui/fidget.nvim", after = { "nvim-lspconfig" } },
     { "kosayoda/nvim-lightbulb", after = { "nvim-lspconfig" } },
     { "jose-elias-alvarez/null-ls.nvim", after = { "nvim-lspconfig" } },
@@ -45,18 +44,17 @@ plugins.dap = {
     { "rcarriga/nvim-dap-ui", after = { "nvim-dap" } },
 }
 plugins.editor = {
+    { "p00f/nvim-ts-rainbow" },
     { "AndrewRadev/switch.vim" },
     -- { "jbyuki/venn.nvim", module = "venn" },
     { "windwp/nvim-autopairs", event = { "InsertEnter" } },
     { "ur4ltz/surround.nvim", event = { "BufRead", "BufNewFile" } },
     { "RRethy/vim-illuminate", event = { "BufRead", "BufNewFile" } },
-    { "p00f/nvim-ts-rainbow" },
     { "lukas-reineke/indent-blankline.nvim", after = { "nvim-treesitter" } },
     { "windwp/nvim-ts-autotag", after = { "nvim-treesitter" } },
     { "JoosepAlviste/nvim-ts-context-commentstring", after = { "nvim-treesitter" } },
     {
         "numToStr/Comment.nvim",
-        keys = { "gb", "gc" },
         module = { "Comment" },
         after = { "nvim-ts-context-commentstring" },
     },
@@ -68,7 +66,7 @@ plugins.editor = {
 }
 
 plugins.lanaguage = {
-    -- { "folke/lua-dev.nvim" },
+    { "folke/neodev.nvim" },
     { "davidgranstrom/nvim-markdown-preview", ft = { "markdown" } },
     { "Vimjas/vim-python-pep8-indent", ft = { "python" }, event = { "InsertEnter" } },
     { "AckslD/swenv.nvim" },
@@ -76,11 +74,11 @@ plugins.lanaguage = {
 
 plugins.find = {
     { "tami5/sqlite.lua" },
+    { "nvim-telescope/telescope.nvim" },
     { "AckslD/nvim-neoclip.lua", after = { "sqlite.lua" } },
     { "kevinhwang91/nvim-hlslens", module = "hlslens" },
     { "phaazon/hop.nvim", cmd = { "HopWord", "HopLine", "HopChar1", "HopChar1CurrentLine" } },
     { "folke/todo-comments.nvim", event = { "BufRead", "BufNewFile" } },
-    { "nvim-telescope/telescope.nvim", module = { "telescope" } },
     { "nvim-telescope/telescope-fzf-native.nvim", run = "make", module = { "telescope._extensions.fzf" } },
 }
 
@@ -97,6 +95,7 @@ plugins.tools = {
 
 plugins.views = {
     { "nvim-lualine/lualine.nvim", after = { "nvim-web-devicons" } },
+    { "stevearc/aerial.nvim", after = {"lualine.nvim"} },
     { "nvim-pack/nvim-spectre", module = "spectre" },
     { "mbbill/undotree", event = { "BufRead", "BufNewFile" } },
     { "kyazdani42/nvim-tree.lua", cmd = { "NvimTreeToggle", "NvimTreeFindFile" } },
