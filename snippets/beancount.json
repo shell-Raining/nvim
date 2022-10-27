@@ -2,9 +2,9 @@
   "add food expenses": {
     "prefix": "food",
     "body": [
-      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"${1:Beneficiary}\" \"${2:Cmt}\"",
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"${1:canteen}\" \"${2}\"",
       "\tAssets:${4:SchoolCard}\t${5:cost}CNY",
-      "\tExpenses:Food\t${6:earn}CNY",
+      "\tExpenses:Food",
       "$0"
     ],
     "description": "print the food expenses"
