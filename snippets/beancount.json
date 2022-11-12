@@ -18,5 +18,15 @@
       "$0"
     ],
     "description": "print the food expenses"
+  },
+  "add bottom water expenses": {
+    "prefix": "bottom",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"water bottom\"",
+      "\tAssets:WechatChange\t${1:cost}CNY",
+      "\tExpenses:Daily",
+      "$0"
+    ],
+    "description": "print the food expenses"
   }
 }
