@@ -17,16 +17,97 @@
       "\tExpenses:Clothing\t${5:earn}CNY",
       "$0"
     ],
-    "description": "print the food expenses"
+    "description": "clothing"
   },
   "add bottom water expenses": {
     "prefix": "bottom",
     "body": [
-      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"water bottom\"",
-      "\tAssets:WechatChange\t${1:cost}CNY",
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"zju\" \"water bottom\"",
+      "\tAssets:WechatChange\t-10.50CNY",
       "\tExpenses:Daily",
       "$0"
     ],
-    "description": "print the food expenses"
+    "description": "water bottom"
+  },
+  "transfer from BOC to SchoolCard": {
+    "prefix": "tbs",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"\" \"transfer from BOC to SchoolCard\"",
+      "\tAssets:BOC\t\t-100.00CNY",
+      "\tAssert:SchoolCard\t+100.00CNY",
+      "$0"
+    ],
+    "description": "transfer"
+  },
+  "transfer from WechatChange to BOC": {
+    "prefix": "twb",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"tencents\" \"transfer from BOC to SchoolCard\"",
+      "\tAssets:WechatChange\t-${1}CNY",
+      "\tExpenses:Daily\t\t+${2}CNY",
+      "\tAssert:BOC\t\t+${3}CNY",
+      "$0"
+    ],
+    "description": "transfer"
+  },
+  "small card in genshin": {
+    "prefix": "smallCard",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"miHoYo\" \"small card\"",
+      "\tAssets:${1:WechatChange}\t-30.00CNY",
+      "\tExpenses:Game\t+30.00CNY",
+      "$0"
+    ],
+    "description": "game for miHoYo"
+  },
+  "big card in genshin": {
+    "prefix": "bigCard",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"miHoYo\" \"small card\"",
+      "\tAssets:${1:WechatChange}\t-30.00CNY",
+      "\tExpenses:Game\t+30.00CNY",
+      "$0"
+    ],
+    "description": "game for miHoYo"
+  },
+  "work salary": {
+    "prefix": "work",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"${1}\" \"${2}\"",
+      "\tAssets:${3:WechatChange}\t+${4}CNY",
+      "\tIncome:Salary\t-${4}CNY",
+      "$0"
+    ],
+    "description": "work myself"
+  },
+  "electricity": {
+    "prefix": "electricity",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"zju\" \"electricity cost\"",
+      "\tAssets:WechatChange\t-200.00CNY",
+      "\tExpenses:Daily\t+200.00CNY",
+      "$0"
+    ],
+    "description": "electricity with roommate"
+  },
+  "haircut": {
+    "prefix": "haircut",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"barber shop\"",
+      "\tAssets:WechatChange\t-25.00CNY",
+      "\tExpenses:Haircut\t+25.00CNY",
+      "$0"
+    ],
+    "description": "haircut in zju barber"
+  },
+  "railway": {
+    "prefix": "railway",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"hangzhou railway\"",
+      "\tAssets:BOC\t-${1}CNY",
+      "\tExpenses:Transport:Subway\t",
+      "$0"
+    ],
+    "description": "railway in hangzhou"
   }
 }
