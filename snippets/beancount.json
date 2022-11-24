@@ -34,7 +34,7 @@
     "body": [
       "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"\" \"transfer from BOC to SchoolCard\"",
       "\tAssets:BOC\t\t-100.00CNY",
-      "\tAssert:SchoolCard\t+100.00CNY",
+      "\tAssets:SchoolCard\t+100.00CNY",
       "$0"
     ],
     "description": "transfer"
@@ -63,9 +63,9 @@
   "big card in genshin": {
     "prefix": "bigCard",
     "body": [
-      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"miHoYo\" \"small card\"",
-      "\tAssets:${1:WechatChange}\t-30.00CNY",
-      "\tExpenses:Game\t+30.00CNY",
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"miHoYo\" \"big card\"",
+      "\tAssets:${1:WechatChange}\t-68.00CNY",
+      "\tExpenses:Game\t+68.00CNY",
       "$0"
     ],
     "description": "game for miHoYo"

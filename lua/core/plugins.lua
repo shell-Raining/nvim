@@ -48,7 +48,7 @@ plugins.editor = {
     { "AndrewRadev/switch.vim" },
     -- { "jbyuki/venn.nvim", module = "venn" },
     { "windwp/nvim-autopairs", event = { "InsertEnter" } },
-    { "ur4ltz/surround.nvim", event = { "BufRead", "BufNewFile" } },
+    -- { "ur4ltz/surround.nvim", event = { "BufRead", "BufNewFile" } },
     { "RRethy/vim-illuminate", event = { "BufRead", "BufNewFile" } },
     { "lukas-reineke/indent-blankline.nvim", after = { "nvim-treesitter" } },
     { "windwp/nvim-ts-autotag", after = { "nvim-treesitter" } },
