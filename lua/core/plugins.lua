@@ -18,8 +18,9 @@ plugins.theme = {
 
 plugins.lsp = {
     { "williamboman/mason-lspconfig.nvim", after = { "mason.nvim" } },
-    { "SmiteshP/nvim-navic", after = { "mason-lspconfig.nvim" } },
-    { "neovim/nvim-lspconfig", after = { "nvim-navic", "neodev.nvim" } },
+    { "folke/neodev.nvim", after = { "mason-lspconfig.nvim" } },
+    { "SmiteshP/nvim-navic", after = { "neodev.nvim" } },
+    { "neovim/nvim-lspconfig", after = { "nvim-navic" } },
     { "j-hui/fidget.nvim", after = { "nvim-lspconfig" } },
     { "kosayoda/nvim-lightbulb", after = { "nvim-lspconfig" } },
     { "jose-elias-alvarez/null-ls.nvim", after = { "nvim-lspconfig" } },
@@ -67,17 +68,15 @@ plugins.editor = {
 }
 
 plugins.lanaguage = {
-    { "folke/neodev.nvim" },
     { "davidgranstrom/nvim-markdown-preview", ft = { "markdown" } },
     { "Vimjas/vim-python-pep8-indent", ft = { "python" }, event = { "InsertEnter" } },
-    { "AckslD/swenv.nvim" },
 }
 
 plugins.find = {
     { "tami5/sqlite.lua" },
+    { "kevinhwang91/nvim-hlslens" },
     { "nvim-telescope/telescope.nvim" },
     { "AckslD/nvim-neoclip.lua", after = { "sqlite.lua" } },
-    { "kevinhwang91/nvim-hlslens", module = "hlslens" },
     { "phaazon/hop.nvim", cmd = { "HopWord", "HopLine", "HopChar1", "HopChar1CurrentLine" } },
     { "folke/todo-comments.nvim", event = { "BufRead", "BufNewFile" } },
     { "nvim-telescope/telescope-fzf-native.nvim", run = "make", module = { "telescope._extensions.fzf" } },

@@ -6,21 +6,13 @@ this is a branch for shellRaining, and askOri is for the newest version of the r
 
 ## Introduction
 
-Based on the configuration of the `Nvim development prerelease` version, it aims to make an out-of-the-box and full-featured code editor.
+Based on the configuration of the `Nvim 0.8.1` version, it aims to make an out-of-the-box and full-featured code editor.
 
 advantage:
 
 - Fast boot (60ms to complete the boot, the test environment is i5-12500H + 16G DDR5)
 - Customizability (completely transparent configuration, build your own IDE in your own way)
 - Extensibility (customization via various community-driven plugins with many pre-made features)
-
-screenshot:
-
-![2022-08-17_19-16](https://user-images.githubusercontent.com/81478335/185186186-eca55520-ab6e-4fd0-963f-45276e94eba2.png)
-
-![2022-08-17_19-20](https://user-images.githubusercontent.com/81478335/185186222-50ed0c6f-3eba-4d1c-9b03-c08919e77734.png)
-
-![2022-08-17_19-23](https://user-images.githubusercontent.com/81478335/185186232-3465dce9-e4f5-42e8-a9ad-005d8f92f86b.png)
 
 ## Install
 
