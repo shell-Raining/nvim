@@ -37,6 +37,7 @@ function M.before()
         "method textDocument/signatureHelp is not supported by any of the servers registered for the current buffer",
         "method textDocument/documentSymbol is not supported by any of the servers registered for the current buffer",
         "warning: multiple different client offset_encodings detected for buffer, this is not supported yet",
+        'Server "emmet_ls" does not support documentSymbols.',
     }
 end
 
