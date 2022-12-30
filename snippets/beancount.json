@@ -45,7 +45,7 @@
       "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"tencents\" \"transfer from BOC to SchoolCard\"",
       "\tAssets:WechatChange\t-${1}CNY",
       "\tExpenses:Daily\t\t+${2}CNY",
-      "\tAssert:BOC\t\t+${3}CNY",
+      "\tAssets:BOC\t\t+${3}CNY",
       "$0"
     ],
     "description": "transfer"
@@ -96,6 +96,16 @@
       "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"barber shop\"",
       "\tAssets:WechatChange\t-25.00CNY",
       "\tExpenses:Haircut\t+25.00CNY",
+      "$0"
+    ],
+    "description": "haircut in zju barber"
+  },
+  "internet": {
+    "prefix": "internet",
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE * \"zju ISP\"",
+      "\tAssets:SchoolCard\t-20.00CNY",
+      "\tExpenses:Daily\t\t+20.00CNY",
       "$0"
     ],
     "description": "haircut in zju barber"
