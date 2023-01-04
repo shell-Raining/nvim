@@ -10,6 +10,8 @@ function global:loadVars()
 
 	local pathSeq = self.isWindows and '\\' or '/'
 	local home = self.isWindows and os.getenv('USERPROFILE') or os.getenv('HOME')
+	
+	self.pathSeq = pathSeq
 	self.cacheDir = home .. pathSeq .. ".cache" .. pathSeq .. "nvim" .. pathSeq
 	self.modulesDir = self.vimPath .. pathSeq .. "modules"
 	self.home = home
