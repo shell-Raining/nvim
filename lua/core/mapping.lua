@@ -1,9 +1,15 @@
 -- this file is not a lua module, but a lua script to set mapping for nvim
-
-local bind = require('keymap.bind')
+local bind = require('utils.keyBind')
 local mapCR = bind.mapCR
 local mapCmd = bind.mapCmd
 
+function leaderMap()
+	vim.g.mapleader = ' '
+	vim.keymap.set('n', ' ', '', {noremap = true})
+	vim.keymap.set('x', ' ', '', {noremap = true})
+end
+
+-- basic mapping without plugin
 local defMap = {
 	['n|<leader><esc>'] = mapCR('wqa!'):withNoremap():withSilent(),
 	['i|jj'] = mapCmd('<esc>'):withSilent(),
@@ -21,6 +27,9 @@ local defMap = {
 	['ict|<m-j>'] = mapCmd("<down>"),
 	['ict|<m-h>'] = mapCmd("<left>"),
 	['ict|<m-l>'] = mapCmd("<right>"),
+	["v|<"] = mapCmd("<gv"),
+	["v|>"] = mapCmd(">gv"),
 }
 
+leaderMap()
 bind.nvimLoadMapping(defMap)
