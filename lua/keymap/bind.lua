@@ -1,3 +1,5 @@
+-- this is a module contains mapping function
+
 local rhsOptions = {}
 
 function rhsOptions:new()

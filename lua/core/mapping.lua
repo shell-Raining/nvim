@@ -1,3 +1,5 @@
+-- this file is not a lua module, but a lua script to set mapping for nvim
+
 local bind = require('keymap.bind')
 local mapCR = bind.mapCR
 local mapCmd = bind.mapCmd

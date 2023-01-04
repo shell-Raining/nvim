@@ -1,3 +1,5 @@
+-- this is not a lua module, but a init script, about core function about plugin, options, mapping and so on
+
 local global = require('core.global')
 local vim = vim
 
