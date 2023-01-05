@@ -6,6 +6,8 @@ local loadCore = function()
 	require('core.mapping')
 	require('core.autocmd')
 	require('core.plugin')
+
+	require('plugins')
 end
 
 loadCore()
