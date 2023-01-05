@@ -41,7 +41,12 @@ local telescopeMap = {
 	['n|<leader>fo'] = mapCR('Telescope oldfiles'):withSilent(),
 }
 
+local nvimTreeMap = {
+	['n|<leader>1'] = mapCR('NvimTreeToggle'):withSilent(),
+}
+
 
 leaderMap()
 bind.nvimLoadMapping(basicMap)
 bind.nvimLoadMapping(telescopeMap)
+bind.nvimLoadMapping(nvimTreeMap)

@@ -13,18 +13,26 @@ local packer_bootstrap = ensure_packer()
 
 require('packer').startup(function(use)
 	-- basic
-	use 'wbthomason/packer.nvim'
-	use "nvim-lua/plenary.nvim"
+	use {'wbthomason/packer.nvim'}
+	use {"nvim-lua/plenary.nvim"}
+    	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use {'nvim-tree/nvim-web-devicons' }
 
 	-- UI
-	use {'nvim-tree/nvim-web-devicons' }
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons'}, }
 	use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
 	use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+	use {"lukas-reineke/indent-blankline.nvim"}
+	use {"p00f/nvim-ts-rainbow"}
 
 	-- telescope
 	use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
+	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
+	-- edit enhance
+	use { "windwp/nvim-ts-autotag", after = { "nvim-treesitter" } }
+
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
