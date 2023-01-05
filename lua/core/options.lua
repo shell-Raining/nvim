@@ -15,7 +15,7 @@ options.autoSave = true
 options.autoReload = false
 options.autoSwitchInput = true
 options.autoRestoreCursePostion = true
-options.auto_remove_new_lines_comment = true
+options.autoRemoveNewLineComment = true
 
 options.unloadPlugins = {
 	"init",

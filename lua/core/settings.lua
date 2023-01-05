@@ -15,6 +15,7 @@ local function loadOptions()
 		errorbells = true,
 		visualbell = true,
 		foldmethod = 'indent',
+		foldlevelstart = 99,
 		foldcolumn = '0',
 
 		-- edit
