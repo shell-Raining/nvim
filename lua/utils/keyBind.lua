@@ -77,6 +77,10 @@ function pbind.mapArgs(cmdString)
 end
 
 function pbind.nvimLoadMapping(mapping)
+	if mapping ~= nil then
+		print('mapping is nil')
+		return
+	end
 	for key, value in pairs(mapping) do
 		local mode, keymap = key:match("([^|]*)|?(.*)")
 		if type(value) == "table" then

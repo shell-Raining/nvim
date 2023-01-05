@@ -10,7 +10,7 @@ function leaderMap()
 end
 
 -- basic mapping without plugin
-local defMap = {
+local basicMap = {
 	['n|<leader><esc>'] = mapCR('wqa!'):withNoremap():withSilent(),
 	['i|jj'] = mapCmd('<esc>'):withSilent(),
 	['n|<esc>'] = mapCR('noh'):withSilent(),
@@ -29,7 +29,19 @@ local defMap = {
 	['ict|<m-l>'] = mapCmd("<right>"),
 	["v|<"] = mapCmd("<gv"),
 	["v|>"] = mapCmd(">gv"),
+	["n|;"] = mapCmd(":"),
+	["n|:"] = mapCmd(";"),
 }
 
+local telescopeMap = {
+	['n|<leader>ff'] = mapCR('Telescope find_files'):withSilent(),
+	['n|<leader>fg'] = mapCR('Telescope live_grep'):withSilent(),
+	['n|<leader>fb'] = mapCR('Telescope buffers'):withSilent(),
+	['n|<leader>fh'] = mapCR('Telescope help_tags'):withSilent(),
+	['n|<leader>fo'] = mapCR('Telescope oldfiles'):withSilent(),
+}
+
+
 leaderMap()
-bind.nvimLoadMapping(defMap)
+bind.nvimLoadMapping(basicMap)
+bind.nvimLoadMapping(telescopeMap)
