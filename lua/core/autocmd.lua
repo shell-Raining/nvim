@@ -43,14 +43,14 @@ if options.autoRestoreCursePostion then
                 vim.fn.setpos(".", vim.fn.getpos("'\""))
                 -- how do I center the buffer in a sane way??
                 -- vim.cmd('normal zz')
-                vim.cmd("silent! foldopen")
+                -- vim.cmd("silent! foldopen")
             end
         end,
     })
 end
 
 -- remove auto-comments
-if options.auto_remove_new_lines_comment then
+if options.autoRemoveNewLineComment then
     vim.api.nvim_create_autocmd({ "BufEnter" }, {
         pattern = { "*" },
         callback = function()
