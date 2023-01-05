@@ -17,4 +17,8 @@ options.autoSwitchInput = true
 options.autoRestoreCursePostion = true
 options.auto_remove_new_lines_comment = true
 
+options.unloadPlugins = {
+	"init",
+}
+
 return options

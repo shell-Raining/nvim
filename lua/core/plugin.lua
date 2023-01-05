@@ -15,7 +15,12 @@ require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- UI
+	use {'nvim-tree/nvim-web-devicons' }
 	use { "catppuccin/nvim", as = "catppuccin" }
+	use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons'}, }
+	use {'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons'}
+	use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
