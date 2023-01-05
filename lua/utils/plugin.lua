@@ -1,8 +1,10 @@
 local optionsM = require('core.options')
 local pathUtil = require('utils.path')
 local stringUtil = require('utils.string')
+local logM = require('log.log')
 
 local endWith = stringUtil.endWith
+local logTable = logM.logTable
 
 
 
@@ -20,6 +22,8 @@ M.loadCwdPlug = function(path)
 
 	-- load plugin in configured path
 	local cwdFileList = vim.fn.readdir(pwd)
+	logM.log(pwd)
+	logTable(cwdFileList)
 	for _, fname in pairs(cwdFileList) do
 		if not endWith(fname, ".lua") then goto continue end
 		local pluginName = fname:sub(1, #fname - #'.lua')
