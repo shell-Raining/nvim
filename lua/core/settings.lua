@@ -14,7 +14,7 @@ local function loadOptions()
 		termguicolors = true,
 		errorbells = true,
 		visualbell = true,
-		foldmethod = 'indent',
+		-- foldmethod = 'indent',
 		foldlevelstart = 99,
 		foldcolumn = '0',
 

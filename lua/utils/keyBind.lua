@@ -77,7 +77,7 @@ function pbind.mapArgs(cmdString)
 end
 
 function pbind.nvimLoadMapping(mapping)
-	if mapping ~= nil then
+	if not mapping then
 		print('mapping is nil')
 		return
 	end
