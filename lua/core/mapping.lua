@@ -39,10 +39,23 @@ local telescopeMap = {
 	['n|<leader>fb'] = mapCR('Telescope buffers'):withSilent(),
 	['n|<leader>fh'] = mapCR('Telescope help_tags'):withSilent(),
 	['n|<leader>fo'] = mapCR('Telescope oldfiles'):withSilent(),
+	['n|<leader>fd'] = mapCmd( function() require("telescope").extensions["todo-comments"].todo() end):withSilent(),
 }
 
 local nvimTreeMap = {
 	['n|<leader>1'] = mapCR('NvimTreeToggle'):withSilent(),
+}
+
+local cmpMap = {
+	['is|<tab>'] = mapCmd(function() return vim.api.nvim_eval("vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<tab>'") end):withSilent(),
+	['is|<s-tab>'] = mapCmd(function() return vim.api.nvim_eval("vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<s-tab>'") end):withSilent(),
+}
+
+local lspMap = {
+	['n|<leader>ca'] = mapCmd(vim.lsp.buf.code_action):withSilent(),
+	['n|<leader>cn'] = mapCmd(vim.lsp.buf.rename):withSilent(),
+	['n|<leader>cf'] = mapCmd(function() vim.lsp.buf.format({ async = true }) end):withSilent(),
+	['n|<leader>ch'] = mapCmd(vim.lsp.buf.hover):withSilent(),
 }
 
 
@@ -50,3 +63,4 @@ leaderMap()
 bind.nvimLoadMapping(basicMap)
 bind.nvimLoadMapping(telescopeMap)
 bind.nvimLoadMapping(nvimTreeMap)
+bind.nvimLoadMapping(lspMap)
