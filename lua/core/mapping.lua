@@ -3,7 +3,7 @@ local bind = require('utils.keyBind')
 local mapCR = bind.mapCR
 local mapCmd = bind.mapCmd
 
-function leaderMap()
+local function leaderMap()
 	vim.g.mapleader = ' '
 	vim.keymap.set('n', ' ', '', {noremap = true})
 	vim.keymap.set('x', ' ', '', {noremap = true})
