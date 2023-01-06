@@ -38,7 +38,6 @@ function rhsOptions:withSilent()
 	return self
 end
 
-
 function rhsOptions:withNoremap()
 	self.options.noremap = true
 	return self
@@ -87,7 +86,7 @@ function pbind.nvimLoadMapping(mapping)
 			local rhs = value.cmd
 			local options = value.options
 			local buf = value.buffer
-			for i=1, #mode do
+			for i = 1, #mode do
 				local subMode = string.sub(mode, i, i)
 				if buf then
 					vim.api.nvim_buf_set_keymap(buf, subMode, keymap, rhs, options)

@@ -28,10 +28,31 @@ require('packer').startup(function(use)
 
 	-- telescope
 	use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
-	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+	use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+	use {"folke/todo-comments.nvim"}
 
 	-- edit enhance
 	use { "windwp/nvim-ts-autotag", after = { "nvim-treesitter" } }
+	use { "windwp/nvim-autopairs" }
+	use { "numToStr/Comment.nvim" }
+	use { "RRethy/vim-illuminate" }
+
+	-- cmp
+	use {"rafamadriz/friendly-snippets"}
+	use {"hrsh7th/vim-vsnip"}
+	use {"hrsh7th/nvim-cmp"}
+	use {"hrsh7th/cmp-vsnip"}
+	use { "hrsh7th/cmp-nvim-lsp" }
+	use {"hrsh7th/cmp-buffer"}
+	use {"hrsh7th/cmp-path"}
+	use {"hrsh7th/cmp-cmdline"}
+	use {"tzachar/cmp-tabnine"}
+
+	-- LSP
+	use {"williamboman/mason.nvim"}
+	use {"williamboman/mason-lspconfig.nvim"}
+	use {"SmiteshP/nvim-navic"}
+	use {"neovim/nvim-lspconfig"}
 
 
 	-- Automatically set up your configuration after cloning packer.nvim

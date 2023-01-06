@@ -12,7 +12,7 @@ it, the result is '~/test/main.lua', notice this result is absolute path, ~ will
 expand into your home path
 
 Warning: this path if longer than 60 chars, will lead to err
-]]--
+]] --
 M.getCwd = function(stackIndex)
 	-- default function arguments is 2
 	stackIndex = stackIndex or 2
@@ -22,7 +22,7 @@ end
 --[[
 this function return the parent path of the file which calling it, and please notice
 in the end, it contains character '/'
-]]--
+]] --
 M.getPwd = function(stackIndex)
 	stackIndex = stackIndex or 2
 	return string.match(string.sub(debug.getinfo(stackIndex).source, 2, -1), "^.*/")
