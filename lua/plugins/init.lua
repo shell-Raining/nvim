@@ -2,5 +2,7 @@
 
 require('plugins.UI')
 require('plugins.telescope')
+require('plugins.edit')
+require('plugins.cmp')
 require('plugins.LSP')
 require('plugins.treesitter')
