@@ -1,18 +1,28 @@
-require("mason").setup()
-require("mason-lspconfig").setup()
+local options = require("core.options")
 
-local navic = require("nvim-navic")
+require("mason").setup({
+	ui = {
+		border = options.float_border and "double" or "none",
+		icons = {
+			package_installed = "",
+			package_pending = "",
+			package_uninstalled = "",
+		},
+	},
+})
+require("mason-lspconfig").setup({})
+
 -- require'lspconfig'.setup{}
-require('lspconfig').sumneko_lua.setup {
+require("lspconfig").sumneko_lua.setup({
 	settings = {
 		Lua = {
 			runtime = {
 				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-				version = 'LuaJIT',
+				version = "LuaJIT",
 			},
 			diagnostics = {
 				-- Get the language server to recognize the `vim` global
-				globals = { 'vim' },
+				globals = { "vim" },
 			},
 			workspace = {
 				-- Make the server aware of Neovim runtime files
@@ -24,15 +34,12 @@ require('lspconfig').sumneko_lua.setup {
 			},
 		},
 	},
-	on_attach = function(client, bufnr)
-		navic.attach(client, bufnr)
-	end
-}
+})
 
-require('lspconfig').yamlls.setup {}
-require('lspconfig').clangd.setup {}
-require('lspconfig').pyright.setup {}
-require('lspconfig').volar.setup {
-	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
-}
+require("lspconfig").yamlls.setup({})
+require("lspconfig").clangd.setup({})
+require("lspconfig").pyright.setup({})
+require("lspconfig").volar.setup({
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+})
 -- require('lspconfig').marksman.setup {}
