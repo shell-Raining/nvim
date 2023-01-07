@@ -28,3 +28,11 @@ require('lspconfig').sumneko_lua.setup {
 		navic.attach(client, bufnr)
 	end
 }
+
+require('lspconfig').yamlls.setup {}
+require('lspconfig').clangd.setup {}
+require('lspconfig').pyright.setup {}
+require('lspconfig').volar.setup {
+	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
+}
+-- require('lspconfig').marksman.setup {}
