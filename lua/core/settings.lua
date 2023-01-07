@@ -1,4 +1,4 @@
--- this file is not a module, but a script to set options for nvim 
+-- this file is not a module, but a script to set options for nvim
 
 local global = require('core.global')
 
@@ -25,7 +25,7 @@ local function loadOptions()
 		backspace = 'indent,eol,start',
 		ignorecase = true,
 		smartcase = true,
-		
+
 		-- buffer
 		hidden = true,
 		backup = false,

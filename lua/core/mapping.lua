@@ -31,6 +31,7 @@ local basicMap = {
 	["v|>"] = mapCmd(">gv"),
 	["n|;"] = mapCmd(":"),
 	["n|:"] = mapCmd(";"),
+	["v|Y"] = mapCmd('"+y'),
 }
 
 local telescopeMap = {
@@ -55,7 +56,12 @@ local lspMap = {
 	['n|<leader>ca'] = mapCmd(vim.lsp.buf.code_action):withSilent(),
 	['n|<leader>cn'] = mapCmd(vim.lsp.buf.rename):withSilent(),
 	['n|<leader>cf'] = mapCmd(function() vim.lsp.buf.format({ async = true }) end):withSilent(),
-	['n|<leader>ch'] = mapCmd(vim.lsp.buf.hover):withSilent(),
+	['n|gh'] = mapCmd(vim.lsp.buf.hover):withSilent(),
+	['n|gr'] = mapCmd(function() require("telescope.builtin").lsp_references() end):withSilent(),
+	['n|gi'] = mapCmd(function() require("telescope.builtin").lsp_implementations() end):withSilent(),
+	['n|gd'] = mapCmd(function() require("telescope.builtin").lsp_definitions() end):withSilent(),
+	['n|gD'] = mapCmd(function() require("telescope.builtin").lsp_type_definitions() end):withSilent(),
+	['n|gO'] = mapCmd(function() require("telescope.builtin").diagnostics() end):withSilent(),
 }
 
 

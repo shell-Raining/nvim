@@ -30,7 +30,7 @@ function Packer:loadPlugins()
 		end
 		for _, f in ipairs(tmp) do
 			-- TODO: what is the meaning of len
-			list[#list+1] = f:sub(#modulesDir - 6, -1)
+			list[#list + 1] = f:sub(#modulesDir - 6, -1)
 		end
 
 		return list
@@ -40,9 +40,9 @@ function Packer:loadPlugins()
 	for _, m in ipairs(pluginsFile) do
 		if m ~= '' then
 			-- TODO: what is the meaning of len
-			local repos = require(m:sub(0, #m-4))
+			local repos = require(m:sub(0, #m - 4))
 			for repo, conf in pairs(repos) do
-				self.repos[#self.repos + 1] = vim.tbl_extend('force', {repo}, conf)
+				self.repos[#self.repos + 1] = vim.tbl_extend('force', { repo }, conf)
 			end
 		end
 	end
@@ -54,4 +54,3 @@ function Packer:loadPacker()
 		packer = require('packer')
 	end
 end
-

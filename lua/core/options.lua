@@ -17,6 +17,9 @@ options.autoSwitchInput = true
 options.autoRestoreCursePostion = true
 options.autoRemoveNewLineComment = true
 
+-- cmp UI
+options.floatBorder = true
+
 options.unloadPlugins = {
 	"init",
 }
