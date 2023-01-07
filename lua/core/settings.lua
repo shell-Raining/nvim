@@ -29,7 +29,7 @@ local function loadOptions()
         foldmethod = "indent",
         foldlevel = 100,
         foldcolumn = "0",
-        clipboard = "unnamedplus",
+        -- clipboard = "unnamedplus",
         smartindent = true,
         iskeyword = "@,48-57,_,192-255",
         laststatus = 3,

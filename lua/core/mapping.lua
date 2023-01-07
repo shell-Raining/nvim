@@ -29,8 +29,8 @@ local basicMap = {
     ['ict|<m-l>'] = mapCmd("<right>"),
     ["v|<"] = mapCmd("<gv"),
     ["v|>"] = mapCmd(">gv"),
-    ["n|;"] = mapCmd(":"),
-    ["n|:"] = mapCmd(";"),
+    ["n|;"] = mapCmd(":"):withNoremap(),
+    ["n|:"] = mapCmd(";"):withNoremap(),
     ["v|Y"] = mapCmd('"+y'),
 }
 
@@ -40,6 +40,8 @@ local telescopeMap = {
     ['n|<leader>fb'] = mapCR('Telescope buffers'):withSilent(),
     ['n|<leader>fh'] = mapCR('Telescope help_tags'):withSilent(),
     ['n|<leader>fo'] = mapCR('Telescope oldfiles'):withSilent(),
+    ['n|<leader>f;'] = mapCR('Telescope command_history'):withSilent(),
+    ['n|<leader>f/'] = mapCR('Telescope search_history'):withSilent(),
     ['n|<leader>fd'] = mapCmd(function() require("telescope").extensions["todo-comments"].todo() end):withSilent(),
 }
 
@@ -48,7 +50,7 @@ local nvimTreeMap = {
 }
 
 local undoTreeMap = {
-    ['n|<leader>u2'] = mapCmd("UndotreeToggle"):withSilent(),
+    ['n|<leader>u3'] = mapCmd("UndotreeToggle"):withSilent(),
 }
 
 local cmpMap = {
@@ -68,6 +70,12 @@ local lspMap = {
     ['n|gd'] = mapCmd(function() require("telescope.builtin").lsp_definitions() end):withSilent(),
     ['n|gD'] = mapCmd(function() require("telescope.builtin").lsp_type_definitions() end):withSilent(),
     ['n|gO'] = mapCmd(function() require("telescope.builtin").diagnostics() end):withSilent(),
+    ['n|<leader>u2'] = mapCR("AerialToggle! right"):withSilent(),
+    ['n|{'] = mapCR("AerialPrev"):withSilent(),
+    ['n|}'] = mapCR("AerialNext"):withSilent(),
+    ['n|[['] = mapCR("AerialPrevUp"):withSilent(),
+    ['n|]]'] = mapCR("AerialNextUp"):withSilent(),
+
 }
 
 local bufferlineMap = {
@@ -87,6 +95,15 @@ local bufferlineMap = {
     ['n|<leader>9'] = mapCR("BufferLineGoToBuffer 9"):withSilent(),
 }
 
+local hopMap = {
+    ['nv|ss'] = mapCR("HopWord"):withSilent(),
+    ['nv|sl'] = mapCR("HopLine"):withSilent(),
+}
+
+local transMap = {
+    ['nv|<leader>tcf'] = mapCR("Translate ZH -source=EN -output=floating"):withSilent(),
+}
+
 
 leaderMap()
 bind.nvimLoadMapping(basicMap)
@@ -95,3 +112,5 @@ bind.nvimLoadMapping(nvimTreeMap)
 bind.nvimLoadMapping(undoTreeMap)
 bind.nvimLoadMapping(lspMap)
 bind.nvimLoadMapping(bufferlineMap)
+bind.nvimLoadMapping(hopMap)
+bind.nvimLoadMapping(transMap)

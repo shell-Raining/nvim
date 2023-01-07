@@ -1,7 +1,7 @@
 -- Set up nvim-cmp.
-local options = require("core.options")
 local cmp = require("cmp")
 local icons = require("utils.icons")
+local options = require('core.options')
 
 local duplicate_keywords = {
     -- allow duplicate keywords
@@ -21,7 +21,7 @@ local complete_window_settings = {
     max_width = 20,
 }
 
-local cmp_config_opts = {
+cmp.setup({
     -- Insert or Replace
     confirmation = {
         default_behavior = cmp.ConfirmBehavior.Replace,
@@ -36,11 +36,16 @@ local cmp_config_opts = {
         end,
     },
     window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        }),
+        documentation = cmp.config.window.bordered({
+            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+        }),
+
     },
     mapping = {
-        ["<cr>"] = cmp.mapping(cmp.mapping.confirm(), { "i", "s", "c" }),
+        -- ["<cr>"] = cmp.mapping(cmp.mapping.confirm(), { "i", "s", "c" }),
         ["<c-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s", "c" }),
         ["<c-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s", "c" }),
         ["<c-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-5), { "i", "s", "c" }),
@@ -111,23 +116,8 @@ local cmp_config_opts = {
             return vim_item
         end,
     },
-}
+})
 
-if options.floatBorder then
-    -- define the appearance of the completion menu
-    cmp_config_opts.window = {
-        completion = cmp.config.window.bordered({
-            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
-        }),
-        documentation = cmp.config.window.bordered({
-            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
-        }),
-    }
-end
-
-cmp.setup(cmp_config_opts)
-
--- Set configuration for specific filetype.
 cmp.setup.filetype("gitcommit", {
     sources = cmp.config.sources({
         { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
@@ -136,7 +126,6 @@ cmp.setup.filetype("gitcommit", {
     }),
 })
 
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
@@ -144,7 +133,6 @@ cmp.setup.cmdline({ "/", "?" }, {
     },
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({

@@ -17,6 +17,7 @@ require("packer").startup(function(use)
     use({ "nvim-lua/plenary.nvim" })
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use({ "nvim-tree/nvim-web-devicons" })
+    use({ "rcarriga/nvim-notify" })
 
     -- UI
     use({ "catppuccin/nvim", as = "catppuccin" })
@@ -26,6 +27,8 @@ require("packer").startup(function(use)
     use({ "lukas-reineke/indent-blankline.nvim" })
     use({ "p00f/nvim-ts-rainbow" })
     use({ "lewis6991/gitsigns.nvim" })
+    use({ "stevearc/aerial.nvim"})
+    -- use({ "akinsho/toggleterm.nvim" })
 
     -- telescope
     use({ "nvim-telescope/telescope.nvim", tag = "0.1.0", requires = { { "nvim-lua/plenary.nvim" } } })
@@ -38,6 +41,11 @@ require("packer").startup(function(use)
     use({ "numToStr/Comment.nvim" })
     use({ "RRethy/vim-illuminate" })
     use({ "phaazon/hop.nvim" })
+    use({ "davidgranstrom/nvim-markdown-preview" })
+    use({ 'kevinhwang91/nvim-hlslens' })
+    use({ "uga-rosa/translate.nvim" })
+    use({ "olimorris/persisted.nvim" })
+    use({ "norcalli/nvim-colorizer.lua" })
 
     -- cmp
     use({ "rafamadriz/friendly-snippets" })
@@ -52,6 +60,7 @@ require("packer").startup(function(use)
 
     -- LSP
     use({ "williamboman/mason.nvim" })
+    -- use({ "folke/neodev.nvim" })
     use({ "williamboman/mason-lspconfig.nvim" })
     use({ "SmiteshP/nvim-navic" })
     use({ "neovim/nvim-lspconfig" })
