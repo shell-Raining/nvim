@@ -71,11 +71,6 @@ local lspMap = {
     ['n|gD'] = mapCmd(function() require("telescope.builtin").lsp_type_definitions() end):withSilent(),
     ['n|gO'] = mapCmd(function() require("telescope.builtin").diagnostics() end):withSilent(),
     ['n|<leader>u2'] = mapCR("AerialToggle! right"):withSilent(),
-    ['n|{'] = mapCR("AerialPrev"):withSilent(),
-    ['n|}'] = mapCR("AerialNext"):withSilent(),
-    ['n|[['] = mapCR("AerialPrevUp"):withSilent(),
-    ['n|]]'] = mapCR("AerialNextUp"):withSilent(),
-
 }
 
 local bufferlineMap = {
