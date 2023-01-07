@@ -5,8 +5,8 @@ local mapCmd = bind.mapCmd
 
 local function leaderMap()
 	vim.g.mapleader = ' '
-	vim.keymap.set('n', ' ', '', {noremap = true})
-	vim.keymap.set('x', ' ', '', {noremap = true})
+	vim.keymap.set('n', ' ', '', { noremap = true })
+	vim.keymap.set('x', ' ', '', { noremap = true })
 end
 
 -- basic mapping without plugin
@@ -40,11 +40,15 @@ local telescopeMap = {
 	['n|<leader>fb'] = mapCR('Telescope buffers'):withSilent(),
 	['n|<leader>fh'] = mapCR('Telescope help_tags'):withSilent(),
 	['n|<leader>fo'] = mapCR('Telescope oldfiles'):withSilent(),
-	['n|<leader>fd'] = mapCmd( function() require("telescope").extensions["todo-comments"].todo() end):withSilent(),
+	['n|<leader>fd'] = mapCmd(function() require("telescope").extensions["todo-comments"].todo() end):withSilent(),
 }
 
 local nvimTreeMap = {
-	['n|<leader>1'] = mapCR('NvimTreeToggle'):withSilent(),
+	['n|<leader>u1'] = mapCR('NvimTreeToggle'):withSilent(),
+}
+
+local undoTreeMap = {
+	['n|<leader>u2'] = mapCmd("UndotreeToggle"):withSilent(),
 }
 
 local cmpMap = {
@@ -64,9 +68,28 @@ local lspMap = {
 	['n|gO'] = mapCmd(function() require("telescope.builtin").diagnostics() end):withSilent(),
 }
 
+local bufferlineMap = {
+	['n|<c-q>'] = mapCR("bdelete"):withSilent(),
+	['n|<c-h>'] = mapCR("BufferLineCyclePrev"):withSilent(),
+	['n|<c-l>'] = mapCR("BufferLineCycleNext"):withSilent(),
+	['n|<c-e>'] = mapCR("BufferLineMovePrev"):withSilent(),
+	['n|<c-y>'] = mapCR("BufferLineMoveNext"):withSilent(),
+	['n|<leader>1'] = mapCR("BufferLineGoToBuffer 1"):withSilent(),
+	['n|<leader>2'] = mapCR("BufferLineGoToBuffer 2"):withSilent(),
+	['n|<leader>3'] = mapCR("BufferLineGoToBuffer 3"):withSilent(),
+	['n|<leader>4'] = mapCR("BufferLineGoToBuffer 4"):withSilent(),
+	['n|<leader>5'] = mapCR("BufferLineGoToBuffer 5"):withSilent(),
+	['n|<leader>6'] = mapCR("BufferLineGoToBuffer 6"):withSilent(),
+	['n|<leader>7'] = mapCR("BufferLineGoToBuffer 7"):withSilent(),
+	['n|<leader>8'] = mapCR("BufferLineGoToBuffer 8"):withSilent(),
+	['n|<leader>9'] = mapCR("BufferLineGoToBuffer 9"):withSilent(),
+}
+
 
 leaderMap()
 bind.nvimLoadMapping(basicMap)
 bind.nvimLoadMapping(telescopeMap)
 bind.nvimLoadMapping(nvimTreeMap)
+bind.nvimLoadMapping(undoTreeMap)
 bind.nvimLoadMapping(lspMap)
+bind.nvimLoadMapping(bufferlineMap)

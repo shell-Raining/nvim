@@ -27,7 +27,7 @@ end
 --[[
 write log info into default dir and file ( tag with date )
 note: you need add \n manually
-]]--
+]] --
 function M.log(info)
 	local filename = os.date("%Y%m%d.log")
 	local defaultPath = logInfoDir .. pathSeq .. 'default' .. pathSeq .. filename
@@ -39,9 +39,9 @@ logTable can write a table info into log
 name is just a string to convenient to distinguishing name
 skipNewLine is a boolean value to configure whether use \n to split items 
 note: logTable will add \n automatically
-]]--
+]] --
 function M.logTable(table, name, skipNewLine)
-	local info = serial.serializeTable(table, name, skipNewLine) 
+	local info = serial.serializeTable(table, name, skipNewLine)
 	M.log(info)
 end
 
