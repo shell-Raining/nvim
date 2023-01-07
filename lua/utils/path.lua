@@ -14,9 +14,9 @@ expand into your home path
 Warning: this path if longer than 60 chars, will lead to err
 ]] --
 M.getCwd = function(stackIndex)
-	-- default function arguments is 2
-	stackIndex = stackIndex or 2
-	return string.gsub(debug.getinfo(stackIndex).short_src, "^(.+\\)[^\\]+$", "%1")
+    -- default function arguments is 2
+    stackIndex = stackIndex or 2
+    return string.gsub(debug.getinfo(stackIndex).short_src, "^(.+\\)[^\\]+$", "%1")
 end
 
 --[[
@@ -24,8 +24,8 @@ this function return the parent path of the file which calling it, and please no
 in the end, it contains character '/'
 ]] --
 M.getPwd = function(stackIndex)
-	stackIndex = stackIndex or 2
-	return string.match(string.sub(debug.getinfo(stackIndex).source, 2, -1), "^.*/")
+    stackIndex = stackIndex or 2
+    return string.match(string.sub(debug.getinfo(stackIndex).source, 2, -1), "^.*/")
 end
 
 return M

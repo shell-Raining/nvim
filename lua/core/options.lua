@@ -21,7 +21,7 @@ options.autoRemoveNewLineComment = true
 options.floatBorder = true
 
 options.unloadPlugins = {
-	"init",
+    "init",
 }
 
 return options

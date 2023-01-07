@@ -7,7 +7,7 @@ serializeTable can make a table to string
 name is just a string to convenient to distinguishing name
 skipNewLines configure whether use \n to split items 
 depth maybe you can not set, or use 0
-]]--
+]] --
 function M.serializeTable(val, name, skipNewLines, depth)
     skipNewLines = skipNewLines or false
     depth = depth or 0
@@ -20,7 +20,7 @@ function M.serializeTable(val, name, skipNewLines, depth)
         tmp = tmp .. "{" .. (not skipNewLines and "\n" or "")
 
         for k, v in pairs(val) do
-            tmp =  tmp .. M.serializeTable(v, k, skipNewLines, depth + 1) .. "," .. (not skipNewLines and "\n" or "")
+            tmp = tmp .. M.serializeTable(v, k, skipNewLines, depth + 1) .. "," .. (not skipNewLines and "\n" or "")
         end
 
         tmp = tmp .. string.rep(" ", depth) .. "}"
