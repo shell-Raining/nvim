@@ -40,6 +40,7 @@ require("lspconfig").sumneko_lua.setup({
 require("lspconfig").yamlls.setup({})
 require("lspconfig").clangd.setup({})
 require("lspconfig").pyright.setup({})
+require("lspconfig").marksman.setup({})
 require("lspconfig").volar.setup({
     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 })
