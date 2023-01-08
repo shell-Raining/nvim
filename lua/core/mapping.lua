@@ -1,5 +1,6 @@
 -- this file is not a lua module, but a lua script to set mapping for nvim
 local bind = require('utils.keyBind')
+local options = require('core.options')
 local mapCR = bind.mapCR
 local mapCmd = bind.mapCmd
 
@@ -69,8 +70,17 @@ local lspMap = {
     ['n|gi'] = mapCmd(function() require("telescope.builtin").lsp_implementations() end):withSilent(),
     ['n|gd'] = mapCmd(function() require("telescope.builtin").lsp_definitions() end):withSilent(),
     ['n|gD'] = mapCmd(function() require("telescope.builtin").lsp_type_definitions() end):withSilent(),
+    ['n|go'] = mapCmd(function()
+        vim.diagnostic.goto_prev({ float = { border = options.float_border and "rounded" or "none" } })
+    end):withSilent(),
     ['n|gO'] = mapCmd(function() require("telescope.builtin").diagnostics() end):withSilent(),
     ['n|<leader>u2'] = mapCR("AerialToggle! right"):withSilent(),
+    ['n|[g'] = mapCmd(function()
+        vim.diagnostic.goto_prev({ float = { border = options.float_border and "rounded" or "none" } })
+    end):withSilent(),
+    ['n|g]'] = mapCmd(function()
+        vim.diagnostic.goto_next({ float = { border = options.float_border and "rounded" or "none" } })
+    end):withSilent(),
 }
 
 local bufferlineMap = {

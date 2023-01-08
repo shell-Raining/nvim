@@ -96,7 +96,7 @@ cmp.setup({
 
             vim_item.kind = string.format("%s %s", icons[kind], kind)
             vim_item.menu = string.format("<%s>", string.upper(source))
-            vim_item.dup = duplicate_keywords[source] or 0
+            -- vim_item.dup = duplicate_keywords[source] or 0
 
             -- determine if it is a fixed window size
             if complete_window_settings.fixed and vim.fn.mode() == "i" then
@@ -118,13 +118,13 @@ cmp.setup({
     },
 })
 
-cmp.setup.filetype("gitcommit", {
-    sources = cmp.config.sources({
-        { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
-    }, {
-        { name = "buffer" },
-    }),
-})
+-- cmp.setup.filetype("gitcommit", {
+--     sources = cmp.config.sources({
+--         { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
+--     }, {
+--         { name = "buffer" },
+--     }),
+-- })
 
 cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
