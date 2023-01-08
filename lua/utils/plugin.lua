@@ -5,6 +5,7 @@ local logM = require('log.log')
 
 local endWith = stringUtil.endWith
 local logTable = logM.logTable
+local unloadPlugins = optionsM.unloadPlugins
 
 
 
@@ -13,11 +14,10 @@ local M = {}
 M.loadCwdPlug = function(path)
     -- because we do not search util path but caller function location, so use stack level 3
     local pwd = pathUtil.getPwd(3)
-    local notLoadPlug = {}
 
     -- not load configured plugin
     for _, v in pairs(optionsM.unloadPlugins) do
-        notLoadPlug[v] = true
+        unloadPlugins[v] = true
     end
 
     -- load plugin in configured path
@@ -28,7 +28,7 @@ M.loadCwdPlug = function(path)
         if not endWith(fname, ".lua") then goto continue end
         local pluginName = fname:sub(1, #fname - #'.lua')
 
-        if notLoadPlug[pluginName] then goto continue end
+        if unloadPlugins[pluginName] then goto continue end
         local file = path .. '.' .. pluginName
         require(file)
 
