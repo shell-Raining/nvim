@@ -6,7 +6,7 @@ require("catppuccin").setup({
         light = "mocha",
         dark = "mocha",
     },
-    transparent_background = false,
+    transparent_background = true,
     term_colors = true,
     styles = {
         comments = { "italic" },
@@ -23,7 +23,7 @@ require("catppuccin").setup({
         operators = {},
     },
     integrations = {
-        bufferline = true,
+        --bufferline = true,
         cmp = true,
         gitsigns = true,
         nvimtree = true,
