@@ -95,7 +95,7 @@ local lspconfig_ui_quick_set = function()
 end
 
 function get_headlers(settings)
-    return vim.tbl_deep_extend("force", aux_lspconfig.lsp_handlers, settings.handlers or {})
+    return vim.tbl_deep_extend("force", lsp_handlers, settings.handlers or {})
 end
 
 local entry = function()
