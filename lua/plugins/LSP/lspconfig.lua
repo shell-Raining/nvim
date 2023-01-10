@@ -74,11 +74,18 @@ require("lspconfig").sumneko_lua.setup({
     handlers = vim.tbl_deep_extend("force", lsp_handlers, {})
 })
 
-require("lspconfig").yamlls.setup({})
-require("lspconfig").clangd.setup({})
-require("lspconfig").pyright.setup({})
+require("lspconfig").yamlls.setup({
+    handlers = vim.tbl_deep_extend("force", lsp_handlers, {})
+})
+require("lspconfig").clangd.setup({
+    handlers = vim.tbl_deep_extend("force", lsp_handlers, {})
+})
+require("lspconfig").pyright.setup({
+    handlers = vim.tbl_deep_extend("force", lsp_handlers, {})
+})
 require("lspconfig").marksman.setup({})
 require("lspconfig").volar.setup({
     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+    handlers = vim.tbl_deep_extend("force", lsp_handlers, {})
 })
 -- require('lspconfig').marksman.setup {}
