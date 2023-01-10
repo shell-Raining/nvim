@@ -42,4 +42,4 @@ luac.out
 *.x86_64
 *.hex
 lua/.luarc.json
-todoList.md
+# todoList.md

@@ -1,5 +1,6 @@
--- require'lspconfig'.setup{}
 local options = require('core.options')
+
+local M = {}
 
 local lsp_hover = function(_, result, ctx, config)
     -- add file type for LSP hover
@@ -39,7 +40,7 @@ local lsp_signature_help = function(_, result, ctx, config)
     end
 end
 
-local lsp_handlers = {
+M.lsp_handlers = {
     ["textDocument/hover"] = vim.lsp.with(lsp_hover, {
         border = options.float_border and "rounded" or "none",
         filetype = "lsp-hover",
@@ -50,42 +51,4 @@ local lsp_handlers = {
     }),
 }
 
-require("lspconfig").sumneko_lua.setup({
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = "LuaJIT",
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { "vim" },
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
-            },
-        },
-    },
-    handlers = vim.tbl_deep_extend("force", lsp_handlers, {})
-})
-
-require("lspconfig").yamlls.setup({
-    handlers = vim.tbl_deep_extend("force", lsp_handlers, {})
-})
-require("lspconfig").clangd.setup({
-    handlers = vim.tbl_deep_extend("force", lsp_handlers, {})
-})
-require("lspconfig").pyright.setup({
-    handlers = vim.tbl_deep_extend("force", lsp_handlers, {})
-})
-require("lspconfig").marksman.setup({})
-require("lspconfig").volar.setup({
-    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-    handlers = vim.tbl_deep_extend("force", lsp_handlers, {})
-})
--- require('lspconfig').marksman.setup {}
+return M
