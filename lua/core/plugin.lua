@@ -21,22 +21,22 @@ require("packer").startup(function(use)
 
     -- UI
     use({ "catppuccin/nvim", as = "catppuccin" })
-    use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
-    use({ "akinsho/bufferline.nvim", requires = "nvim-tree/nvim-web-devicons" })
+    use({ "nvim-tree/nvim-tree.lua" })
+    use({ "akinsho/bufferline.nvim" })
     use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
     use({ "lukas-reineke/indent-blankline.nvim" })
     use({ "p00f/nvim-ts-rainbow" })
     use({ "lewis6991/gitsigns.nvim" })
-    use({ "stevearc/aerial.nvim"})
+    use({ "stevearc/aerial.nvim" })
     -- use({ "akinsho/toggleterm.nvim" })
 
     -- telescope
-    use({ "nvim-telescope/telescope.nvim", tag = "0.1.0", requires = { { "nvim-lua/plenary.nvim" } } })
+    use({ "nvim-telescope/telescope.nvim" })
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use({ "folke/todo-comments.nvim" })
 
     -- edit enhance
-    use({ "windwp/nvim-ts-autotag", after = { "nvim-treesitter" } })
+    use({ "windwp/nvim-ts-autotag" })
     use({ "windwp/nvim-autopairs" })
     use({ "numToStr/Comment.nvim" })
     use({ "RRethy/vim-illuminate" })
